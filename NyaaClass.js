@@ -11,7 +11,6 @@ class NyaaApi {
 		let Response = [];
 		const $ = await this.fetchPage(`https://nyaa.si/?f=0&c=0_0&q=${Query}`);
 		const table = $("div.table-responsive > table > tbody >"); //tr is lefting
-		//lets try returning the first item
 		table.each((i, el) => {
 			$(el).each((ind, element) => {
 				Response.push({
