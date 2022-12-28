@@ -8,9 +8,22 @@ async function main() {
 		message: "Anime Query",
 		default: "",
 	});
+	const AnswForMode = await inquirer.prompt({
+		name: "Mode",
+		message: "Which mode (leave it blank if u want the default, otherwise just add any character)",
+		default: "obj"
+	})
 	try {
-		const html = await utils.Search(await Answ.Anime);
-		console.log(html);
+		if(AnswForMode.Mode == "obj"){
+			const html = await utils.Search(await Answ.Anime);
+			console.log(html);
+		}
+		else{
+			const html = await utils.Search(await Answ.Anime);
+			html.forEach(element => {
+				console.log(element.Magnet);
+			});
+		}
 	} catch (e) {
 		console.log(e);
 	}
