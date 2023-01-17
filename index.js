@@ -10,7 +10,7 @@ async function main() {
 	});
 	const AnswForMode = await inquirer.prompt({
 		name: "Mode",
-		message: "Which mode (leave it blank if u want the default, otherwise just add any character)",
+		message: "Which mode (leave it blank if you want the default, otherwise just add any character)",
 		default: "obj"
 	})
 	try {
